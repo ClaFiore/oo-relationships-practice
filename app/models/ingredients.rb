@@ -38,4 +38,5 @@ class Ingredient
             ingred.name.downcase.include?(ingredient.downcase)
         end
     end
+
 end

@@ -1,5 +1,3 @@
-
-
 class Bakery
 attr_reader :name
 @@all = []
@@ -36,13 +34,10 @@ def average_calories
 end
 
 def shopping_list
-    self.ingredients
+    names = self.ingredients.map do |ing_obj|
+    ing_obj.name
     end
-    binding.pry
+    names.join(', ')
 end
-
-
- # total_cal = ice_cream.calories + croissant.calories + muffin.calories
-    #  puts total_cal / 3
 
 end
