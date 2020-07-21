@@ -1,13 +1,12 @@
 require "pry"
 class Dessert
 
-    attr_reader :name, :bakery, :ingredient
+    attr_reader :name, :bakery
     @@all_dessert = []
 
     def initialize(name, bakery)
         @name = name
         @bakery = bakery
-        # @ingredient = ingredient
         @@all_dessert << self
     end
 
@@ -19,7 +18,7 @@ class Dessert
         IngredientsDessert.new(self, ingredient)
     end
 
-    def ingredient
+    def ingredients
         matching = IngredientsDessert.all.select do |ingr_des|
             ingr_des.dessert == self 
         end

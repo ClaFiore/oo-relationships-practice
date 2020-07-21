@@ -19,10 +19,15 @@ Dessert.all_dessert.find_all do |dessert|
 end
 
 def ingredients
-    self.desserts.map do |dessert|
-     dessert.ingredient
+    array = [] #for a given bakery we need to find all of its desserts, and then check the ingredients of each desserts and add them to the array
+    self.desserts.each do |dessert|
+        dessert.ingredients.each do |ingredient|
+            if !array.include?(ingredient)
+            array << ingredient
+            end
+        end
     end
-     
+    array
 end
 
 def average_calories
@@ -36,8 +41,7 @@ end
 def shopping_list
     names = self.ingredients.map do |ing_obj|
     ing_obj.name
-    end
-    names.join(', ')
+    end.join(', ')
 end
 
 end

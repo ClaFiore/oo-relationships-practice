@@ -47,3 +47,4 @@ puts "\n\n"
 #p starbucks.shopping_list # "sugar, flour"
 
 p starbucks.shopping_list
+#p starbucks.ingredients
